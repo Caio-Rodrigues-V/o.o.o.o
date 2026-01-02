@@ -2,7 +2,7 @@
 body { margin: 0; background: #0b0b0d; color: #fff; }
 .container { max-width: 520px; margin: 40px auto; padding: 20px; background: #14141a; border-radius: 12px; }
 input, button { padding: 10px; border-radius: 10px; border: 1px solid #2a2a35; background: #0f0f14; color: #fff; }
-form { display: flex; gap: 10px; margin: 12px 0; }
+form { display: flex; gap: 10px; margin: 13px 0; }
 form input { flex: 1; }
 button { cursor: pointer; }
 .secondary { background: transparent; }
