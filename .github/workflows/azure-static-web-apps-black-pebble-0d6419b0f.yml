@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 🔴 PASSO CRÍTICO: FORÇAR NODE 20
+      # ✅ FORÇA NODE 20
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
@@ -31,6 +31,7 @@ jobs:
       - name: Build app
         run: npm run build
 
+      # 🚀 DEPLOY SEM BUILD DO ORYX
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -38,8 +39,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           app_location: "/"
-          output_location: "dist"   # 🔥 VITE SEMPRE gera em dist
+          output_location: "dist"
           api_location: ""
+          skip_app_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
